@@ -24,3 +24,5 @@ def quick_sort(nums: List[int]) -> List[int]:
 
 
 print(quick_sort([7, 6, 10, 5, 9, 8, 3, 4]))
+print(quick_sort([8, -3, 5, 4, 1, 4]))
+print(quick_sort([3]))
