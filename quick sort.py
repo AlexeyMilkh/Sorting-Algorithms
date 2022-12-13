@@ -8,16 +8,17 @@
 
 3. Для отрезков «меньших» и «больших» значений выполнить рекурсивно ту же последовательность операций, если длина
 отрезка больше единицы."""
+from typing import List
 
 
-def quick_sort(s):
-    if len(s) <= 1:  # Если длина массива меньше или равна единице
-        return s
+def quick_sort(nums: List[int]) -> List[int]:
+    if len(nums) <= 1:  # Если длина массива меньше или равна единице
+        return nums
 
-    elem = s[0]  # Инициализация опорного элемента
-    left = list(filter(lambda x: x < elem, s))  # В левую часть помещаются элементы меньше опорного
-    center = [i for i in s if i == elem]  # Список с элементами, равными опорному
-    right = list(filter(lambda x: x > elem, s))  # В правую часть помещаются элементы больше опорного
+    elem = nums[0]  # Инициализация опорного элемента
+    left = list(filter(lambda x: x < elem, nums))  # В левую часть помещаются элементы меньше опорного
+    center = [i for i in nums if i == elem]  # Список с элементами, равными опорному
+    right = list(filter(lambda x: x > elem, nums))  # В правую часть помещаются элементы больше опорного
 
     return quick_sort(left) + center + quick_sort(right)  # Алгоритм рекурсивно вызывается для левой и правой части
 
